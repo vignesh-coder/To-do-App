@@ -15,7 +15,11 @@ $(document).ready(function(){
   });
   $('.todo-item').on('click',function(){
 
-    var item = $(this).text().replace(/ /g,'-');
+    var todo = $(this).text();
+    alert("Delete \""+todo+"\"");
+    
+    var item = todo.replace(/ /g,'-');
+
     $.ajax({
       type: 'DELETE',
       url: '/todo/'+item,
